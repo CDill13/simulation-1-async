@@ -5,25 +5,25 @@ import "./homepage.css";
 class Homepage extends Component {
     render() {
         return(
-            <div>
+            <div className="">
                 <header className="header">
-                    <img className="logo" src={logo} alt="Shelfie logo"/>
+                    <img href="/#/" className="logo" src={logo} alt="Shelfie logo"/>
                     <h1>SHELFIE</h1>
                 </header>
-                <div className="shelf-container">
-                    <div className="shelf">
+                <center  className="shelf-container">
+                    <a href="/#/shelf_a" className="shelf">
                         <p>Shelf A</p>
-                    </div>
-                    <div className="shelf">
+                    </a>
+                    <a href="/#/shelf_b" className="shelf">
                         <p>Shelf B</p>
-                    </div>
-                    <div className="shelf">
+                    </a>
+                    <a href="/#/shelf_c" className="shelf">
                         <p>Shelf C</p>
-                    </div>
-                    <div className="shelf">
+                    </a>
+                    <a href="/#/shelf_d" className="shelf">
                         <p>Shelf D</p>
-                    </div>
-                </div>
+                    </a>
+                </center>
             </div>
         )
     }
