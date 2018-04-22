@@ -1,0 +1,14 @@
+.bin-contents{
+    display: flex;
+    flex-direction: row;
+}
+.image-container{
+    margin-left: auto;
+}
+.product-info-container{
+    margin-right: auto;
+}
+.product-image{
+    height: 300px;
+    width: 300px;
+}

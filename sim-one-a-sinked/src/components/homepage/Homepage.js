@@ -8,7 +8,7 @@ class Homepage extends Component {
             <div className="">
                 <header className="header">
                     <img href="/#/" className="logo" src={logo} alt="Shelfie logo"/>
-                    <h1>SHELFIE</h1>
+                    <h1 className="title">SHELFIE</h1>
                 </header>
                 <center  className="shelf-container">
                     <a href="/#/shelf_a" className="shelf">

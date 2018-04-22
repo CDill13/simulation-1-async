@@ -22,7 +22,9 @@ massive(process.env.CONNECTION_STRING).then(
     }
 )
 
-let port = SERVER_PORT || 4200;
+app.get("/api/get_shelf_content", ctrlr.getShelf)
+
+let port = SERVER_PORT || 9001;
 app.listen(port, () => {
     console.log(portChalk("NODE DEMON SPEAKS"))
 })

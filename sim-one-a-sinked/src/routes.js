@@ -5,7 +5,8 @@ import Shelf_a from "./components/shelf/Shelf_a";
 import Shelf_b from "./components/shelf/Shelf_b";
 import Shelf_c from "./components/shelf/Shelf_c";
 import Shelf_d from "./components/shelf/Shelf_d";
-import Bin1SA from "./components/bin/Bin1SA";
+import Bin from "./components/bin/Bin";
+import CreateBin from "./components/bin/createBin/CreateBin";
 
 export default (
     <HashRouter>
@@ -16,7 +17,9 @@ export default (
                 <Route path="/shelf_b" component={Shelf_b}/>
                 <Route path="/shelf_c" component={Shelf_c}/>
                 <Route path="/shelf_d" component={Shelf_d}/>
-                <Route path="/bin1sa" component={Bin1SA}/>
+                {/* <Route path="/bin" component={Bin}/> */}
+                <Route path="/bin" render={(props) => (<Bin {...props}/>)} />
+                <Route path="/create_bin" component={CreateBin}/>
             </Switch>
         </div>
     </HashRouter>

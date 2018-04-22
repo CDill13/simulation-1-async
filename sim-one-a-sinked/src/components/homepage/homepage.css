@@ -3,9 +3,7 @@
   margin-left: 175px; 
   animation: App-logo-spin infinite .6s linear;
 } */
-.header{
-}
-h1{
+.title{
     color: white;
     font-style: bold;
 }

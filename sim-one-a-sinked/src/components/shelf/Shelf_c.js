@@ -1,7 +1,34 @@
 import React, {Component} from "react";
 import logo from "./logo.png";
+import "./shelf.css";
+import axios from "axios";
 
 class Shelf_c extends Component {
+    constructor(){
+        super();
+        this.state = {
+            shelfContent: []
+        }
+        this.getShelfContent = this.getShelfContent.bind(this)
+    }
+
+    getShelfContent(){
+        axios.get("/api/get_shelf_content")
+        .then(res => {
+            console.log("shelf content?", res.data)
+            this.setState({
+                shelfContent: res.data
+                }
+            )
+        })
+    }
+
+
+
+    componentDidMount(){
+        this.getShelfContent();
+    }
+
     render() {
         return(
             <div>
@@ -14,9 +41,9 @@ class Shelf_c extends Component {
                     </div>
                 </header>
                 <center className="bin-container">
-                    <div className="bin">
+                    <a className="bin" href="/#/bin">
                         <p>Bin 1</p>
-                    </div>
+                    </a>
                     <div className="bin">
                         <p>Bin 2</p>
                     </div>
@@ -26,7 +53,7 @@ class Shelf_c extends Component {
                     <div className="bin">
                         <p>Bin 4</p>
                     </div>
-                    <div classname="add-inventory">
+                    <div className="add-inventory">
                         <p>+ Add Inventory</p>
                     </div>
                 </center>

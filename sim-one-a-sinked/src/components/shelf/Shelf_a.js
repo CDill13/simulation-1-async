@@ -1,8 +1,40 @@
 import React, {Component} from "react";
 import logo from "./logo.png";
 import "./shelf.css";
+import axios from "axios";
 
 class Shelf_a extends Component {
+    constructor(){
+        super();
+        this.state = {
+            shelfContent: []
+        }
+        this.getShelfContent = this.getShelfContent.bind(this)
+    }
+
+    getShelfContent(){
+        // axios.get("/api/get_shelf_content")
+        // .then(res => {
+        //     console.log("shelf content:", res.data)
+        //     this.setState({
+        //         shelfContent: res.data
+        //         }
+        //     )
+        // })
+        axios.get("/api/find_shelf_by_id", {params: {
+            shelf_id: "A"
+            }
+        })
+        .then( response => console.log(response))
+        .catch( err => console.log(err))
+    }
+
+
+
+    componentDidMount(){
+        this.getShelfContent();
+    }
+
     render() {
         return(
             <div>
@@ -15,7 +47,16 @@ class Shelf_a extends Component {
                     </div>
                 </header>
                 <center className="bin-container">
-                    <a className="bin" href="/#/bin1sa">
+
+                <div>
+                    {/* {this.state.shelfContent.forEach(bin){
+                        return{
+                            <a className="bin" href="/#/bin" ></a>
+                        }
+                    }
+                    } */}
+                </div>
+                    <a className="bin" test="hi" href="/#/bin">
                         <p>Bin 1</p>
                     </a>
                     <div className="bin">
@@ -27,9 +68,9 @@ class Shelf_a extends Component {
                     <div className="bin">
                         <p>Bin 4</p>
                     </div>
-                    <div classname="add-inventory">
+                    <a href="/#/create_bin" className="add-inventory">
                         <p>+ Add Inventory</p>
-                    </div>
+                    </a>
                 </center>
             </div>
         )
