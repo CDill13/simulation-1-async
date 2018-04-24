@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import logo from "./logo.png";
 import "./shelf.css";
 import axios from "axios";
+import Bin from "../bin/Bin";
+import CreateBin from "../bin/createBin/CreateBin";
 
 class Shelf_a extends Component {
     constructor(){
@@ -13,21 +15,22 @@ class Shelf_a extends Component {
     }
 
     getShelfContent(){
-        // axios.get("/api/get_shelf_content")
-        // .then(res => {
-        //     console.log("shelf content:", res.data)
-        //     this.setState({
-        //         shelfContent: res.data
-        //         }
-        //     )
-        // })
-        axios.get("/api/find_shelf_by_id", {params: {
-            shelf_id: "A"
-            }
+        axios.get("/api/get_shelf_content")
+        .then(res => {
+            console.log("shelf content:", res.data)
+            this.setState({
+                shelfContent: res.data
+                }
+            )
         })
-        .then( response => console.log(response))
-        .catch( err => console.log(err))
     }
+    //     axios.get("/api/get_shelf_by_id/:id", {params: {
+    //         shelf_id: "A"
+    //         }
+    //     })
+    //     .then( response => console.log(response))
+    //     .catch( err => console.log(err))
+    // }
 
 
 
@@ -49,14 +52,13 @@ class Shelf_a extends Component {
                 <center className="bin-container">
 
                 <div>
-                    {/* {this.state.shelfContent.forEach(bin){
-                        return{
-                            <a className="bin" href="/#/bin" ></a>
-                        }
+                    {this.state.shelfContent.map((element) => {
+                        return <a>Bin<Bin binContent={element}/></a> 
+                    })
                     }
-                    } */}
+                    
                 </div>
-                    <a className="bin" test="hi" href="/#/bin">
+                    {/* <a className="bin" test="hi" href="/#/bin">
                         <p>Bin 1</p>
                     </a>
                     <div className="bin">
@@ -70,7 +72,7 @@ class Shelf_a extends Component {
                     </div>
                     <a href="/#/create_bin" className="add-inventory">
                         <p>+ Add Inventory</p>
-                    </a>
+                    </a> */}
                 </center>
             </div>
         )

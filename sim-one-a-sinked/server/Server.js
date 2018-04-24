@@ -23,6 +23,7 @@ massive(process.env.CONNECTION_STRING).then(
 )
 
 app.get("/api/get_shelf_content", ctrlr.getShelf)
+app.get("/api/get_shelf_by_id/:id", ctrlr.getShelfById)
 
 let port = SERVER_PORT || 9001;
 app.listen(port, () => {

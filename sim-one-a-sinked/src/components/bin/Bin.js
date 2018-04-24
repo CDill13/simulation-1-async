@@ -4,10 +4,6 @@ import "./bin.css";
 import corgi from "./corgi.jpg";
 
 class Bin extends Component {
-    constructor(props) { 
-        super(props);
-    }
-
     componentDidMount(){
         
     }
@@ -24,9 +20,7 @@ class Bin extends Component {
                         <p>Shelf A</p>
                     </a>
                     <div className="bin-name">
-                        <p>
-                            Bin
-                        </p>
+                        <p>Bin{this.props.binContent.bin_id}</p>
                     </div>
                 </header>
                 <center className="bin-contents">
@@ -37,13 +31,13 @@ class Bin extends Component {
                     </div>
                     <div className="product-info-container">
                         <div>
-                            <p>Name</p>
+                            <p>name</p>
                             <div className="product-container">
-                                <h2>product name</h2>
+                                <h2>{this.props.binContent.product_name}</h2>
                             </div>
                             <p>price</p>
                             <div className="price-container">
-                                <h2>$monies</h2>
+                                <h2>{this.props.binContent.price}</h2>
                             </div>
                             <div className="edit-buttons">
                                 <button className="green-button">SAVE</button>
