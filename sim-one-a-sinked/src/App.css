@@ -3,17 +3,17 @@
   width: 100vw;
 }
 .header{
-  height: 200px;
+  height: 70px;
   width: 100%;
   background-color: #AB2A19;
   display: flex;
   align-items: center;
 }
 .logo {
-  animation: App-logo-spin infinite 1s linear;
+  /* animation: App-logo-spin infinite .375s linear; */
   height: 45px;
   width: 45px;
-  padding-right: 150px;
+  /* padding-right: 30px; */
   margin-left: 175px; 
 }
 h1,
@@ -24,6 +24,7 @@ h5,
 h6,
 p {
   font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
 }
 @keyframes App-logo-spin {
   from { transform: rotate(360deg); }

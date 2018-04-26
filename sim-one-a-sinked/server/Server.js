@@ -14,7 +14,7 @@ const {
 const app = express();
 app.use(bodyParser.json())
 
-let portChalk = chalk.white.bold;
+let portChalk = chalk.blue;
 massive(process.env.CONNECTION_STRING).then(
     db => {
         app.set("db", db)
@@ -22,8 +22,12 @@ massive(process.env.CONNECTION_STRING).then(
     }
 )
 
-app.get("/api/get_shelf_content", ctrlr.getShelf)
-app.get("/api/get_shelf_by_id/:id", ctrlr.getShelfById)
+// app.get("/api/load_table", ctrlr.loadTable);
+// app.get("/api/get_shelf_content", ctrlr.getShelf);
+app.post("/api/create_product/:letter/:number", ctrlr.createProduct)
+app.get("/api/get_shelf_by_id/:letter", ctrlr.getShelfById);
+app.get("/api/get_bin_by_id/:letter/:number", ctrlr.getBinById);
+
 
 let port = SERVER_PORT || 9001;
 app.listen(port, () => {

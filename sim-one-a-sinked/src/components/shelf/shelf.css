@@ -1,0 +1,41 @@
+.bin{
+    height: 70px;
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 8px;
+    font-size: 26px;
+    color: white;
+    background-color: #D34735;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.addInventory{
+    height: 70px;
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 8px;
+    font-size: 26px;
+    color: white;
+    background-color: #ED6B5A;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.shelf-title{
+    color: white;
+    font-style: bold;
+    background-color: #D34735;
+    height: 70px;
+    width: 100%;
+}
+.shelf-title h1{
+    margin-right: auto;
+    margin-left: 0;
+}
+.bin-container{
+    height: 100%;
+    width: 75%;
+    margin: 0 auto;
+    text-decoration: none;
+}
