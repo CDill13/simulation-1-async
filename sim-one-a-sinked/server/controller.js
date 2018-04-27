@@ -43,6 +43,14 @@ module.exports = {
             res.status(200).send(response)
         })
         .catch(err => console.log(ctrlrChalk(err)))
+    },
+    deleteProduct: (req, res) => {
+        const dbInstance = req.app.get("db");
+        dbInstance.delete_product(req.params.letter, req.params.number)
+        .then(response => {
+            res.status(200).send(response)
+        })
+        .catch(err => console.log(ctrlrChalk(err)))
     }
 
 }

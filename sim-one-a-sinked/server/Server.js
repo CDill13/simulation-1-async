@@ -24,7 +24,9 @@ massive(process.env.CONNECTION_STRING).then(
 
 // app.get("/api/load_table", ctrlr.loadTable);
 // app.get("/api/get_shelf_content", ctrlr.getShelf);
-app.post("/api/create_product/:letter/:number", ctrlr.createProduct)
+app.put("/api/delete_product/:letter/:number", ctrlr.deleteProduct)
+app.put("/api/update_product/:letter/:number", ctrlr.createProduct)
+app.put("/api/create_product/:letter/:number", ctrlr.createProduct)
 app.get("/api/get_shelf_by_id/:letter", ctrlr.getShelfById);
 app.get("/api/get_bin_by_id/:letter/:number", ctrlr.getBinById);
 

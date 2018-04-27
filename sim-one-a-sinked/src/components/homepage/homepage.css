@@ -10,7 +10,7 @@
 }
 .shelf-container{
     height: 100%;
-    width: 75%;
+    width: 70%;
     margin: 0 auto;
 }
 .shelf{
@@ -20,8 +20,21 @@
     border-radius: 8px;
     font-size: 26px;
     color: white;
+    font-style: bold;
     background-color: #D34735;
     display: flex;
     align-items: center;
     text-decoration: none;
+}
+.shelf p{
+    margin: 0 15%;
+}
+.logo {
+    animation: App-logo-spin infinite 5s linear;
+    height: 45px;
+    width: 45px;
+}
+.logo-container{
+    margin-left: 15%;
+    margin-right: 10px;
 }

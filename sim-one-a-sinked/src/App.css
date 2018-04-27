@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   width: 100vw;
+  /* animation: App-logo-spin infinite 1s linear; */
+
 }
 .header{
   height: 70px;
@@ -9,24 +11,18 @@
   display: flex;
   align-items: center;
 }
-.logo {
-  /* animation: App-logo-spin infinite .375s linear; */
-  height: 45px;
-  width: 45px;
-  /* padding-right: 30px; */
-  margin-left: 175px; 
-}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p {
+p,
+input {
   font-family: 'Open Sans', sans-serif;
   text-decoration: none;
 }
 @keyframes App-logo-spin {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

@@ -5,22 +5,30 @@
     border-radius: 8px;
     font-size: 26px;
     color: white;
-    background-color: #D34735;
+    background-color: #ED6B5A;
     display: flex;
     align-items: center;
     text-decoration: none;
 }
+.bin p{
+    margin: 0 15%;
+}
+
 .addInventory{
     height: 70px;
     width: 100%;
     margin: 15px 0;
     border-radius: 8px;
     font-size: 26px;
-    color: white;
-    background-color: #ED6B5A;
+    font-style: bold;
+    color: black;
+    background-color: #FFB8AF;
     display: flex;
     align-items: center;
     text-decoration: none;
+}
+.addInventory p{
+    margin: 0 15%;
 }
 .shelf-title{
     color: white;
@@ -30,12 +38,19 @@
     width: 100%;
 }
 .shelf-title h1{
-    margin-right: auto;
-    margin-left: 0;
+    display: flex;
+    font-style: bold;
+    position: flex-start;
+    margin: 15px;
+    width: 85%;
 }
 .bin-container{
     height: 100%;
     width: 75%;
     margin: 0 auto;
+    font-style: bold;
     text-decoration: none;
+}
+.shelfLogoContainer{
+    width: 15%;
 }

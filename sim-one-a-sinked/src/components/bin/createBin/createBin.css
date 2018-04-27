@@ -4,3 +4,51 @@
     text-decoration: none;
     /* font-size: 32px; */
 }
+.add2-button{
+    height: 50px;
+    width: 100%;
+    background-color: #40F99B;
+    border: none;
+    border-radius: 25px;
+    box-shadow: none;
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+}
+.create-bin-container{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+}
+.input{
+    margin: 10px 0 20px;
+    border: #ED6B5A solid 1px;
+    padding: 10px;
+    border-radius: 7px;
+    font-size: 175%;
+}
+.input:focus{
+    border: #AB2A19 solid 5px;
+}
+p{
+    font-style: bold;
+    display: flex;
+    position: flex-start;
+    margin: 0 0 0 0;
+    padding-right: auto;
+}
+.createBinTitle{
+    color: black;
+    font-style: bold;
+    width: 60%;
+    height: 70px;
+    background-color: #FFB8AF
+}
+.createBinTitle h1{
+    display: flex;
+    font-style: bold;
+    position: flex-start;
+    margin: 15px;
+}

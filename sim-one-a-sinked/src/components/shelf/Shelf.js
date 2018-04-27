@@ -10,20 +10,9 @@ class Shelf extends Component {
         this.state = {
             shelfContent: []
         }
-        // this.getShelfContent = this.getShelfContent.bind(this)
         this.getShelfContentById = this.getShelfContentById.bind(this)
     }
 
-    // getShelfContent(){
-    //     axios.get("/api/get_shelf_content")
-    //     .then(res => {
-    //         console.log("shelf content:", res.data)
-    //         this.setState({
-    //             shelfContent: res.data
-    //             }
-    //         )
-    //     })
-    // }
     getShelfContentById(){
         function compare(a,b){
             if(a.bin_id < b.bin_id){
@@ -37,7 +26,6 @@ class Shelf extends Component {
             this.setState({
             shelfContent: response.data.sort(compare)
         }),
-        // console.log(response)
         )
         .catch( err => console.log(err))
     }
@@ -49,12 +37,12 @@ class Shelf extends Component {
     }
 
     render() {
-        // console.log("state.shelf:", this.state.shelfContent )
+        // console.log("props n stuff", this.props.match.params);
         let letter = this.props.match.params.letter;
         return(
             <div>
                 <header className="header">
-                    <a href="/#/">
+                    <a href="/#/" className="shelfLogoContainer">
                         <img  className="logo" src={logo} alt="_ie logo"/>
                     </a>
                     <div className="shelf-title">
@@ -78,21 +66,6 @@ class Shelf extends Component {
                         }
                     })
                     }
-                    {/* <a className="bin" test="hi" href="/#/bin">
-                        <p>Bin 1</p>
-                    </a>
-                    <div className="bin">
-                        <p>Bin 2</p>
-                    </div>
-                    <div className="bin">
-                        <p>Bin 3</p>
-                    </div>
-                    <div className="bin">
-                        <p>Bin 4</p>
-                    </div>
-                    <a href="/#/create_bin" className="add-inventory">
-                        <p>+ Add Inventory</p>
-                    </a> */}
                 </center>
             </div>
         )

@@ -14,7 +14,6 @@ class Bin extends Component {
             price: "",
             editing: false
         }
-        // this.getBinContentById = this.getBinContentById.bind(this)
     }
 
     componentWillMount(){
@@ -25,36 +24,51 @@ class Bin extends Component {
         })
     )
         .catch( err => console.log(err))
-        // this.getBinContentById()
-        // console.log(this.state.binContent)
     }
 
-    editing(){
-        this.setState({
-            editing: true
+    edit(){
+        this.state.editing ?
+        this.setState({editing: false}) &
+        axios.put(`/api/update_product/${this.props.match.params.letter}/${this.props.match.params.number}`, {
+            productName: this.state.productName,
+            price: this.state.price
         })
+        :
+        this.setState({editing: true})
     }
 
-    save(){
+    deleteProduct(){
+        axios.put(`/api/delete_product/${this.props.match.params.letter}/${this.props.match.params.number}`)
+
+    }
+
+    handleNameInput(value){
         this.setState({
-            editing: false
+            productName: value
         })
+        console.log(this.state.productName)
+    }
+
+    handlePriceInput(value){
+        this.setState({
+            price: value
+        })
+        console.log(this.state.price)
     }
     
     render() {
-        // console.log("state:", this.state)
         let binLetter = this.props.match.params.letter;
         let binNumber = this.props.match.params.number;
         return(
             <div>
                 <header className="header">
-                    <a href="/#/">
+                    <a href="/#/" className="binLogoContainer">
                         <img className="logo" src={logo} alt="Shelfie logo"/>
                     </a>
-                    <Link className="title" to={{pathname: `/shelf/${binLetter}`}}>
+                    <Link className="shelfTitle" to={{pathname: `/shelf/${binLetter}`}}>
                         <h1>Shelf {binLetter}</h1>
                     </Link>
-                    <div className="bin-title">
+                    <div className="binTitle">
                         <h1>Bin {binNumber}</h1>
                     </div>
                 </header>
@@ -62,55 +76,28 @@ class Bin extends Component {
                     <div className="image-container">
                         <img className="product-image" src={corgi} alt="midget dog"/>
                     </div>
-                    {/* {() => {
-                        if(this.state.editing === true){
-                            return
-                            // <ProductInfo className="product-info-container" />
-                            <Link className="product-info-container">
-                                <p>Name</p>
-                                <div className="product-container">
-                                    <h2>{this.state.productName}</h2>
-                                </div>
-                                <p>Price</p>
-                                <div className="price-container">
-                                    <h2>{this.state.price}</h2>
-                                </div>
-                                <div className="edit-buttons">
-                                    <button onClick={() => this.editing()} className="gray-button">EDIT</button>
-                                    <button className="gray-button">DELETE</button>
-                                </div>                              
-                            </Link>
-                        }else if(this.state.editing === false){
-                            return
-                            <Link className="product-info-container">
-                                <p>Name</p>
-                                <div className="product-container">
-                                    <h2>{this.state.productName}</h2>
-                                </div>
-                                <p>Price</p>
-                                <div className="price-container">
-                                    <h2>{this.state.price}</h2>
-                                </div>
-                                <div className="edit-buttons">
-                                    <button onClick={() => this.editing() & console.log(this.state.editing)} className="gray-button">EDIT</button>
-                                    <button className="gray-button">DELETE</button>
-                                </div>                              
-                            </Link>
-                            // <ProductInfo className="product-info-container" />
-                        }
-                    }} */}
                     <div className="product-info-container">
                         <p>Name</p>
-                        <div className="product-container">
-                            <h2>{this.state.productName}</h2>
-                        </div>
+                        <input
+                        className="infoDisplay" 
+                        value={this.state.productName} 
+                        readOnly={this.state.editing ? false : true}
+                        onChange={e => this.handleNameInput(e.target.value)} />
                         <p>Price</p>
-                        <div className="price-container">
-                            <h2>{this.state.price}</h2>
-                        </div>
+                        <input
+                        className="infoDisplay" 
+                        value={this.state.price} 
+                        readOnly={this.state.editing ? false : true}
+                        onChange={e => this.handlePriceInput(e.target.value)} />
                         <div className="edit-buttons">
-                            <button onClick={() => this.editing()} className="gray-button">EDIT</button>
-                            <button className="gray-button">DELETE</button>
+                            <button 
+                                onClick={() => this.edit()} 
+                                className={this.state.editing ? "green-button" : "gray-button"}>
+                                {this.state.editing ? "SAVE" : "EDIT"}
+                            </button>
+                            <Link to={{pathname: `/shelf/${binLetter}`}} >
+                                <button onClick={() => this.deleteProduct()} className="gray-button">DELETE</button>
+                            </Link>
                         </div>
                     </div>
                 </center>

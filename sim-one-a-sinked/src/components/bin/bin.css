@@ -1,17 +1,55 @@
 .bin-contents{
+    margin-top: 30px;
     display: flex;
     flex-direction: row;
+    /* animation: App-logo-spin infinite .425s linear; */
 }
-.bin-title{
+.binLogoContainer{
+    width: 15%;
+}
+.shelfTitle{
     color: white;
     font-style: bold;
+    text-decoration: none;
+    background-color: #D34735;
+    height: 70px;
+    width: 25%;
+    /* padding-right: 7%; */
+    /* animation: App-logo-spin infinite .425s linear; */
+
+}
+.shelfTitle h1{
+    display: flex;
+    font-style: bold;
+    position: flex-start;
+    margin: 15px;
+    /* animation: App-logo-spin infinite 1s linear; */
+
+}
+.binTitle{
+    height: 70px;
+    color: white;
+    font-style: bold;
+    width: 60%;
+    background-color: #ED6B5A;
+    /* animation: App-logo-spin infinite .425s linear; */
+
+}
+.binTitle h1{
+    display: flex;
+    font-style: bold;
+    position: flex-start;
+    margin: 15px;
 }
 .image-container{
     margin: 0 auto;
 }
 .product-info-container{
-    margin: 0 auto;
+    margin: 0;
     width: 40%;
+    margin: 0 auto;
+    /* animation: App-logo-spin infinite .425s linear; */
+
 }
 .product-image{
     height: 300px;
@@ -20,13 +58,16 @@
     border-radius: 150px;
 }
 .edit-buttons{
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: space-between;
+    width: 100%;
+
 }
 .gray-button{
     height: 50px;
-    width: 125px;
+    width: 150px;
     background-color: #D8D8D8;
     border: none;
     border-radius: 7px;
@@ -45,3 +86,26 @@
     margin: 4px 2px;
     cursor: pointer;*/
 } 
+.green-button{
+    height: 50px;
+    width: 100px;
+    background-color: #40F99B;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    box-shadow: none;
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+}
+.infoDisplay{
+    margin: 10px 0 20px;
+    border: #ED6B5A solid 1px;
+    padding: 2.5%;
+    border-radius: 7px;
+    font-size: 175%;
+    width: 100%;
+}
+.infoDisplay:focus{
+    border: #AB2A19 solid 5px;
+}
