@@ -17,6 +17,9 @@ class Bin extends Component {
     }
 
     componentWillMount(){
+        //this could break state if the axios call is really fast and state is not rendered by the time it comes back
+        //componentDidMount is preferrable for this reason when updating state.
+        //componentWillMount wouild be fine if this was manipulating redux instead of state.
         axios.get(`/api/get_bin_by_id/${this.props.match.params.letter}/${this.props.match.params.number}`)
         .then( res => this.setState({
             productName: res.data[0].product_name,

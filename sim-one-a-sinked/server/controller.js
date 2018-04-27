@@ -2,13 +2,6 @@ const chalk = require("chalk");
 let ctrlrChalk = chalk.cyan;
 
 module.exports = {
-    // getShelf: (req, res) => {
-    //     const dbInstance = req.app.get("db");
-    //     dbInstance.get_shelf_a([req])
-    //     .then(response => {
-    //         res.status(200).send(response)})
-    //         .catch(err => console.log("get shelf err", err))
-    // },
     getShelfById: (req, res) => {
         const dbInstance = req.app.get("db");
         dbInstance.get_shelf_content_by_id(req.params.letter)
@@ -18,13 +11,6 @@ module.exports = {
         })
         .catch(err => console.log(ctrlrChalk("getShelfById err:",err)))
     },
-    // loadTable: (req, res) => {
-    //     const dbInstance = req.app.get("db");
-    //     dbInstance.load_table([req])
-    //     .then(response => {
-    //         res.status(200).send(response)})
-    //     .catch(err => console.log("loadTableDB:",err))
-    // },
     getBinById: (req, res) => {
         const dbInstance = req.app.get("db");
         dbInstance.get_bin_by_id(req.params.letter, req.params.number)

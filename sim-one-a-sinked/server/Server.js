@@ -22,14 +22,12 @@ massive(process.env.CONNECTION_STRING).then(
     }
 )
 
-// app.get("/api/load_table", ctrlr.loadTable);
-// app.get("/api/get_shelf_content", ctrlr.getShelf);
+//I have three puts when I only needed one. Save some code next time and just use different database instances like you did anyway.
 app.put("/api/delete_product/:letter/:number", ctrlr.deleteProduct)
 app.put("/api/update_product/:letter/:number", ctrlr.createProduct)
 app.put("/api/create_product/:letter/:number", ctrlr.createProduct)
 app.get("/api/get_shelf_by_id/:letter", ctrlr.getShelfById);
 app.get("/api/get_bin_by_id/:letter/:number", ctrlr.getBinById);
-
 
 let port = SERVER_PORT || 9001;
 app.listen(port, () => {

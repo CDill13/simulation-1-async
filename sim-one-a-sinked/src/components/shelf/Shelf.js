@@ -14,6 +14,7 @@ class Shelf extends Component {
     }
 
     getShelfContentById(){
+        //sql ORDER BY instead of this bullshit
         function compare(a,b){
             if(a.bin_id < b.bin_id){
                 return -1; 
