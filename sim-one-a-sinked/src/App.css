@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   width: 100vw;
-  /* animation: App-logo-spin infinite 1s linear; */
+  /* animation: App-logo-spin infinite 5s linear; */
 
 }
 .header{
@@ -23,6 +23,10 @@ input {
   text-decoration: none;
 }
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  0.005% { transform: rotate(360deg); }
+  .020% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+  /* 95% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); } */
 }

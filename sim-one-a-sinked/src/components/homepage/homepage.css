@@ -30,7 +30,7 @@
     margin: 0 15%;
 }
 .logo {
-    animation: App-logo-spin infinite 5s linear;
+    animation: App-logo-spin infinite 3600s linear;
     height: 45px;
     width: 45px;
 }

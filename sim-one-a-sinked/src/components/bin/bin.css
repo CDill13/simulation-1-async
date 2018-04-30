@@ -54,7 +54,7 @@
 .product-image{
     height: 300px;
     width: 300px;
-    /* animation: App-logo-spin infinite .425s linear; */
+    /* animation: App-logo-spin infinite 5s linear; */
     border-radius: 150px;
 }
 .edit-buttons{
